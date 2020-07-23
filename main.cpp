@@ -4,6 +4,6 @@
 int main()
 {
     Logwriter logwrite("testing");
-    std::cout<<logwrite.getTime()<<std::endl;
+    logwrite.writeLog("debug", "just testing");
     return 0;
 }

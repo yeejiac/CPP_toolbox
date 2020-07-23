@@ -22,10 +22,10 @@ libfile= $(LIB)logwriter.cpp
 	g++ -c $< -o $(BIN)$@
 
 %.a: 
-	ar crsv $@ $(wildcard $(BIN)*.o)
+	ar crsv $(BIN)$@ $(wildcard $(BIN)*.o)
 
 main: $(CXXFILE)
-	g++ $(CXXFILE) lib.a \
+	g++ $(CXXFILE) $(BIN)lib.a \
 	$(CXX) $(TARGET) $(CFLAGS)
 
 mainsocket: $(CXXFILE)
