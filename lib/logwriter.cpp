@@ -53,39 +53,39 @@ void Logwriter::writeLog(std::string level, std::string documentation)
 
 void Logwriter::fatallevel()
 {
-    logcontent_ = getTime() + " fatal " + logType_;
+    logcontent_ = getTime() + "| fatal |" + logType_;
     std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
     log_file << logcontent_ + " " + documentation_ << std::endl;
 }
 
 void Logwriter::warnlevel()
 {
-    logcontent_ = getTime() + " warn " + logType_;
+    logcontent_ = getTime() + "| warn |" + logType_;
     std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
     log_file << logcontent_ + " " + documentation_ << std::endl;
 }
 
 void Logwriter::errorlevel()
 {
-    logcontent_ = getTime() + " error " + logType_;
+    logcontent_ = getTime() + "| error |" + logType_;
     std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
     log_file << logcontent_ + " " + documentation_ << std::endl;
 }
 
 void Logwriter::debuglevel()
 {
-    logcontent_ = getTime() + " debug " + logType_;
+    logcontent_ = getTime() + "| debug |" + logType_;
     std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
     log_file << logcontent_ + " " + documentation_ << std::endl;
 }
 
 void Logwriter::tracelevel()
 {
-    logcontent_ = getTime() + " trace " + logType_;
+    logcontent_ = getTime() + "| trace |" + logType_;
 }
 
 void Logwriter::infolevel()
 {
-    logcontent_ = getTime() + " info " + logType_;
+    logcontent_ = getTime() + "| info |" + logType_;
 }
 

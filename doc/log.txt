@@ -1,1 +1,2 @@
-2020-07-23 20:55:30 debug testing just testing
+2020-09-09 20:21:39 debug testing just testing
+2020-09-09 20:39:12| debug |testing just testing
