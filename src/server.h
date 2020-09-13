@@ -20,7 +20,7 @@ public:
 	~Server();
 	void socketini();
 	void acceptConn();
-	void recv();
+	void recv_conn();
 	void send();
 	void setconnStatus(bool connStatus);
 	bool getconnStatus();
@@ -36,7 +36,7 @@ private:
 	char buffer_[buffer];
 	int recvbuflen_ = buffer;
 	bool connStatus_;
-	InitParser *ip = new InitParser("../doc/settings.ini", "socket");
+	InitParser *ip = new InitParser("D:\\program_file\\CPP_toolbox\\doc\\settings.ini", "socket");
 };
 
 

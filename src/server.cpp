@@ -3,7 +3,7 @@
 Server::Server()
 {
 	socketini();
-	// acceptConn();
+	acceptConn();
 }
 
 Server::~Server()
@@ -27,7 +27,9 @@ void Server::socketini()
 {
 	ip->readLine();
 	const char* port = ip->iniContainer["port"].c_str();
+	std::cout<<port<<std::endl;
 	const char* addr = ip->iniContainer["addr"].c_str();
+	std::cout<<addr<<std::endl;
 	iniSignal_ = WSAStartup(MAKEWORD(2,2), &wsaData_);
 	if(iniSignal_ != 0)
 	{
@@ -97,25 +99,17 @@ void Server::acceptConn()
 	}
 }
 
-// int main()
-// {
-//     // Logwriter logwrite("testing");
-//     // logwrite.writeLog("debug", "just testing");
-//     Server *sr = new Server;
-//     return 0;
-// }
-
-// void Server::recv()
-// {
-// 	while(connStatus_)
-// 	{
-// 		iniSignal_ = recv(clientSocket_, buffer_, recvbuflen_, 0);
-// 		if(iniSignal_>0)
-// 		{
-// 			std::cout<<"recv from client: "<<buffer_<<std::endl;
-// 		}
-// 	}
-// }
+void Server::recv_conn()
+{
+	while(connStatus_)
+	{
+		iniSignal_ = recv(clientSocket_, buffer_, recvbuflen_, 0);
+		if(iniSignal_>0)
+		{
+			std::cout<<"recv from client: "<<buffer_<<std::endl;
+		}
+	}
+}
 
 // void Server::send()
 // {
