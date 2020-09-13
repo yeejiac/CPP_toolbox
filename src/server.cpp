@@ -3,7 +3,7 @@
 Server::Server()
 {
 	socketini();
-	acceptConn();
+	// acceptConn();
 }
 
 Server::~Server()
@@ -25,6 +25,9 @@ bool Server::getconnStatus()
 
 void Server::socketini()
 {
+	ip->readLine();
+	const char* port = ip->iniContainer["port"].c_str();
+	const char* addr = ip->iniContainer["addr"].c_str();
 	iniSignal_ = WSAStartup(MAKEWORD(2,2), &wsaData_);
 	if(iniSignal_ != 0)
 	{
@@ -37,7 +40,7 @@ void Server::socketini()
 	hints_.ai_protocol = IPPROTO_TCP;
 	hints_.ai_flags = AI_PASSIVE;
 	
-	iniSignal_ = getaddrinfo(NULL, DEFAULT_PORT, &hints_, &result_);
+	iniSignal_ = getaddrinfo(addr, port, &hints_, &result_);
 	if(iniSignal_ != 0)
 	{
 		std::cout<<"getaddrinfo failed with error: "<< iniSignal_<<std::endl;
@@ -45,7 +48,7 @@ void Server::socketini()
 		exit(1);
 	}
 	
-	listenSocket_ = socket(result_->ai_family, result_->ai_socktype, result_->ai_protocol)
+	listenSocket_ = socket(result_->ai_family, result_->ai_socktype, result_->ai_protocol);
 	if(listenSocket_ == INVALID_SOCKET)
 	{
 		std::cout<<"socket failed with error: "<< WSAGetLastError()<<std::endl;
@@ -58,12 +61,12 @@ void Server::socketini()
     if (iniSignal_ == SOCKET_ERROR) 
 	{
         std::cout<<"bind failed with error: "<< WSAGetLastError()<<std::endl;
-        freeaddrinfo(result);
+        freeaddrinfo(result_);
         closesocket(listenSocket_);
         WSACleanup();
         exit(1);
     }
-	freeaddrinfo(result);
+	freeaddrinfo(result_);
 	
 	iniSignal_ = listen( listenSocket_, SOMAXCONN);
     if (iniSignal_ == SOCKET_ERROR) 
@@ -74,6 +77,7 @@ void Server::socketini()
         exit(1);
 	}
 	setconnStatus(true);
+	std::cout<<"server socket init success"<<std::endl;
 	
 }
 
@@ -93,29 +97,37 @@ void Server::acceptConn()
 	}
 }
 
-void Server::recv()
-{
-	while(connStatus_)
-	{
-		iniSignal_ = recv(clientSocket_, buffer_, recvbuflen_, 0);
-		if(iniSignal_>0)
-		{
-			std::cout<<"recv from client: "<<buffer_<<std::endl;
-		}
-	}
-}
+// int main()
+// {
+//     // Logwriter logwrite("testing");
+//     // logwrite.writeLog("debug", "just testing");
+//     Server *sr = new Server;
+//     return 0;
+// }
 
-void Server::send()
-{
-	while(connStatus_)
-	{
-		iSendResult_ = sebd(clientSocket_, "Hello", iniSignal_, 0);
-		if (iSendResult == SOCKET_ERROR) 
-		{
-            printf("send failed with error: %d\n", WSAGetLastError());
-            closesocket(ClientSocket);
-            WSACleanup();
-            return 1;
-        }
-	}
-}
+// void Server::recv()
+// {
+// 	while(connStatus_)
+// 	{
+// 		iniSignal_ = recv(clientSocket_, buffer_, recvbuflen_, 0);
+// 		if(iniSignal_>0)
+// 		{
+// 			std::cout<<"recv from client: "<<buffer_<<std::endl;
+// 		}
+// 	}
+// }
+
+// void Server::send()
+// {
+// 	while(connStatus_)
+// 	{
+// 		iSendResult_ = send(clientSocket_, "Hello", iniSignal_, 0);
+// 		if (iSendResult == SOCKET_ERROR) 
+// 		{
+//             printf("send failed with error: %d\n", WSAGetLastError());
+//             closesocket(ClientSocket);
+//             WSACleanup();
+//             return 1;
+//         }
+// 	}
+// }

@@ -4,12 +4,13 @@
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
+#include <winsock2.h>
 #include <Windows.h>
 #include <ws2tcpip.h>
-#include <winsock2.h>
 #include <string>
+// #include "lib/logwriter.h"
+#include "../lib/initParser.h"
 
-#define PORT_NUM 1200
 #define buffer 1024
 
 class Server
@@ -35,6 +36,7 @@ private:
 	char buffer_[buffer];
 	int recvbuflen_ = buffer;
 	bool connStatus_;
+	InitParser *ip = new InitParser("../doc/settings.ini", "socket");
 };
 
 
