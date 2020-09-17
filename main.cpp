@@ -7,9 +7,8 @@
 int main()
 {
     // Logwriter logwrite("testing");
-    // logwrite.writeLog("debug", "just testing");
+    // logwrite.writeLog("debug", "main programing running");
     Server *sr = new Server;
-    sr->recv_conn();
     int a;
     std::cin>>a;
     return 0;

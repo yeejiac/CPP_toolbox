@@ -8,7 +8,13 @@
 #include <Windows.h>
 #include <ws2tcpip.h>
 #include <string>
-// #include "lib/logwriter.h"
+#include <algorithm>
+#include <mutex>
+#include <condition_variable>
+#include <thread>
+
+#include "../lib/logwriter.h"
+#include "connection.h"
 #include "../lib/initParser.h"
 
 #define buffer 1024
@@ -20,10 +26,11 @@ public:
 	~Server();
 	void socketini();
 	void acceptConn();
-	void recv_conn();
+	void msgRecv(Connection *cn);
 	void send();
 	void setconnStatus(bool connStatus);
 	bool getconnStatus();
+	Logwriter logwrite = Logwriter("testing");
 	
 private:
 	WSADATA wsaData_;
@@ -36,6 +43,8 @@ private:
 	char buffer_[buffer];
 	int recvbuflen_ = buffer;
 	bool connStatus_;
+	std::mutex mutex_;
+    std::condition_variable conncv_;
 	InitParser *ip = new InitParser("D:\\program_file\\CPP_toolbox\\doc\\settings.ini", "socket");
 };
 

@@ -1,10 +1,10 @@
-CFLAGS=-I. -lWs2_32 -w
+CFLAGS= -lWs2_32 -w
 # -lWs2_32 use for socket
 # -w ignore warning
 SRC=./src/
 SERVER=$(SRC)server.h
 CLIENT=$(SRC)client.h
-
+FILEPATH=-I. ./lib/ ./src/
 BIN=./bin/
 LIB=./lib/
 CXX=-std=c++11 -Wall
@@ -24,7 +24,7 @@ main: $(CXXFILE)
 	$(CXX) $(TARGET) $(CFLAGS)
 
 # %.o: $(LIBS)
-# 	g++ -c $< -o $(BIN)$@
+# 	g++ -c -fPIC $(FILEPATH) $< -o $(BIN)$@
 
 initParser:
 	g++ -c $(LIB)initParser.cpp -o $(BIN)initParser.o
@@ -34,6 +34,12 @@ logwriter:
 
 server:
 	g++ -c $(SRC)server.cpp -o $(BIN)server.o
+
+connection: 
+	g++ -c $(FILEPATH)connection.cpp -o $(BIN)connection.o
+
+
+# OFILE_LIST = initParser.o logwriter.o server.o
 
 %.a: 
 	ar crsv $(BIN)$@ $(wildcard $(BIN)*.o)

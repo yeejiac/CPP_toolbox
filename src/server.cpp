@@ -1,9 +1,13 @@
 #include "server.h"
 
+
 Server::Server()
 {
 	socketini();
-	acceptConn();
+	std::thread connacpt(&Server::acceptConn,this);
+	// std::thread recvConn(&Server::recv_conn,this);
+	connacpt.detach();
+	// recvConn.detach();
 }
 
 Server::~Server()
@@ -33,10 +37,11 @@ void Server::socketini()
 	iniSignal_ = WSAStartup(MAKEWORD(2,2), &wsaData_);
 	if(iniSignal_ != 0)
 	{
-		std::cout<<"WSAStartup failed with error: "<< iniSignal_<<std::endl;
+		logwrite.writeLog("error", "WSAStartup failed with error: " + iniSignal_);
+		// std::cout<<"WSAStartup failed with error: "<< iniSignal_<<std::endl;
 		exit(1);
 	}
-	ZeroMemory(&hints_, sizeof(hints_));
+	memset(&hints_, 0,sizeof(hints_));
 	hints_.ai_family = AF_INET;
 	hints_.ai_socktype = SOCK_STREAM;
 	hints_.ai_protocol = IPPROTO_TCP;
@@ -45,7 +50,8 @@ void Server::socketini()
 	iniSignal_ = getaddrinfo(addr, port, &hints_, &result_);
 	if(iniSignal_ != 0)
 	{
-		std::cout<<"getaddrinfo failed with error: "<< iniSignal_<<std::endl;
+		logwrite.writeLog("error", "getaddrinfo failed with error: " + iniSignal_);
+		// std::cout<<"getaddrinfo failed with error: "<< iniSignal_<<std::endl;
 		WSACleanup();
 		exit(1);
 	}
@@ -53,7 +59,8 @@ void Server::socketini()
 	listenSocket_ = socket(result_->ai_family, result_->ai_socktype, result_->ai_protocol);
 	if(listenSocket_ == INVALID_SOCKET)
 	{
-		std::cout<<"socket failed with error: "<< WSAGetLastError()<<std::endl;
+		logwrite.writeLog("error", "socket failed with error: "+ WSAGetLastError());
+		// std::cout<<"socket failed with error: "<< WSAGetLastError()<<std::endl;
 		freeaddrinfo(result_);
 		WSACleanup();
 		exit(1);
@@ -62,7 +69,8 @@ void Server::socketini()
 	iniSignal_ = bind( listenSocket_, result_->ai_addr, (int)result_->ai_addrlen);
     if (iniSignal_ == SOCKET_ERROR) 
 	{
-        std::cout<<"bind failed with error: "<< WSAGetLastError()<<std::endl;
+		logwrite.writeLog("error", "bind failed with error: " + WSAGetLastError());
+        // std::cout<<"bind failed with error: "<< WSAGetLastError()<<std::endl;
         freeaddrinfo(result_);
         closesocket(listenSocket_);
         WSACleanup();
@@ -73,40 +81,64 @@ void Server::socketini()
 	iniSignal_ = listen( listenSocket_, SOMAXCONN);
     if (iniSignal_ == SOCKET_ERROR) 
 	{
+		logwrite.writeLog("error", "listen failed with error: " + WSAGetLastError());
 		std::cout<<"listen failed with error: "<< WSAGetLastError()<<std::endl;
         closesocket(listenSocket_);
         WSACleanup();
         exit(1);
 	}
 	setconnStatus(true);
-	std::cout<<"server socket init success"<<std::endl;
-	
+	logwrite.writeLog("debug", "server socket init success");
+	// std::cout<<"server socket init success"<<std::endl;
 }
 
 void Server::acceptConn()
 {
-	clientSocket_ = accept(listenSocket_, NULL, NULL);
-	if(clientSocket_ == INVALID_SOCKET)
+	while(getconnStatus())
 	{
-		std::cout<<"accept failed with error: "<< WSAGetLastError()<<std::endl;
-		closesocket(listenSocket_);
-		WSACleanup();
-        exit(1);
-	}
-	else
-	{
-		std::cout<<"get socket connection"<<std::endl;
+		clientSocket_ = accept(listenSocket_, (struct sockaddr *)&result_, NULL);
+		if(clientSocket_ == INVALID_SOCKET)
+		{
+			std::cout<<"accept failed with error: "<< WSAGetLastError()<<std::endl;
+			logwrite.writeLog("error", "accept failed with error: " + WSAGetLastError());
+			closesocket(listenSocket_);
+			WSACleanup();
+			exit(1);
+		}
+		else
+		{
+			setconnStatus(true);
+			std::string connPortNum;
+			// connPortNum = std::to_string(ntohs(result_->sa_data));
+
+			logwrite.writeLog("debug", "get socket connection");
+			std::lock_guard<std::mutex> lckConnect(mutex_);
+			Connection *cn = new Connection(clientSocket_);
+			conncv_.notify_all();
+
+			std::thread recvConn(&Server::msgRecv, this, cn);
+			recvConn.detach();
+		}
 	}
 }
 
-void Server::recv_conn()
+void Server::msgRecv(Connection *cn)
 {
 	while(connStatus_)
 	{
-		iniSignal_ = recv(clientSocket_, buffer_, recvbuflen_, 0);
-		if(iniSignal_>0)
+		std::string recvStr;
+		bool connStatus = true;
+		connStatus = cn->recvfrom(recvStr);
+		if(connStatus)
 		{
-			std::cout<<"recv from client: "<<buffer_<<std::endl;
+			//push to queue
+			logwrite.writeLog("debug", "recv from client: " + recvStr);
+			// std::cout<<"recv success"<<std::endl;
+		}
+		else
+		{
+			//freesocket
+			std::cout<<"recv fail"<<std::endl;
 		}
 	}
 }
