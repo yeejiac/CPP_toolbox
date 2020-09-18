@@ -12,6 +12,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <thread>
+#include <map>
 
 #include "../lib/logwriter.h"
 #include "connection.h"
@@ -30,9 +31,11 @@ public:
 	void send();
 	void setconnStatus(bool connStatus);
 	bool getconnStatus();
+	void freeEmptysocket();
 	Logwriter logwrite = Logwriter("testing");
 	
 private:
+	int connLimit_ = 10;
 	WSADATA wsaData_;
 	int iniSignal_;
 	SOCKET listenSocket_;
@@ -44,7 +47,10 @@ private:
 	int recvbuflen_ = buffer;
 	bool connStatus_;
 	std::mutex mutex_;
+	std::condition_variable st_;
     std::condition_variable conncv_;
+	std::condition_variable limitLock_;
+	std::map<int, Connection*> connStorage_;
 	InitParser *ip = new InitParser("D:\\program_file\\CPP_toolbox\\doc\\settings.ini", "socket");
 };
 
