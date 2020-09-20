@@ -130,11 +130,11 @@ void Server::msgRecv(Connection *cn)
 		std::string recvStr;
 		bool connStatus = true;
 		connStatus = cn->recvfrom(recvStr);
-		if(connStatus)
+		if(connStatus&&recvStr!="")
 		{
 			//push to queue
-			logwrite.writeLog("debug", "recv from client: " + recvStr);
-			// std::cout<<"recv success"<<std::endl;
+			dq->pushDTA(recvStr);
+			// logwrite.writeLog("debug", "recv from client: " + recvStr);
 		}
 		else
 		{

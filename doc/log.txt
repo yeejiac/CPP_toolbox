@@ -1115,3 +1115,143 @@
 2020-09-19 00:22:53| debug |testing get socket connection: 1
 2020-09-19 00:22:59| debug |testing recv from client: 2
 2020-09-19 00:23:01| debug |testing (Server): free empty socket
+2020-09-19 14:35:25| debug |testing main programing running
+2020-09-19 14:38:42| debug |testing main programing running
+2020-09-19 14:38:42| debug |testing server socket init success
+2020-09-19 14:38:56| debug |testing get socket connection: 0
+2020-09-19 14:38:58| debug |testing recv from client: 2
+2020-09-19 14:39:00| debug |testing recv from client: 555
+2020-09-19 14:39:02| debug |testing recv from client: HI
+2020-09-19 14:39:08| debug |testing recv from client: 87899966
+2020-09-19 14:39:10| debug |testing recv from client: 1
+2020-09-19 14:39:12| debug |testing (Server): free empty socket
+2020-09-19 14:39:59| debug |testing get socket connection: 0
+2020-09-19 14:47:24| debug |testing main programing running
+2020-09-19 14:47:24| debug |testing server socket init success
+2020-09-19 14:48:36| debug |testing main programing running
+2020-09-19 14:48:36| debug |testing server socket init success
+2020-09-19 14:48:59| debug |testing main programing running
+2020-09-19 14:48:59| debug |testing server socket init success
+2020-09-19 14:55:17| debug |testing main programing running
+2020-09-19 14:55:17| debug |testing server socket init success
+2020-09-19 15:06:50| debug |testing main programing running
+2020-09-19 15:06:50| debug |testing server socket init success
+2020-09-19 15:14:45| debug |testing main programing running
+2020-09-19 15:14:45| debug |testing server socket init success
+2020-09-19 15:23:05| debug |testing main programing running
+2020-09-19 15:23:05| debug |testing server socket init success
+2020-09-19 15:24:26| debug |testing main programing running
+2020-09-19 15:24:26| debug |testing server socket init success
+2020-09-19 15:46:24| debug |testing main programing running
+2020-09-19 15:46:24| debug |testing server socket init success
+2020-09-19 16:00:46| debug |testing main programing running
+2020-09-19 16:00:46| error |testing 
+2020-09-20 12:11:42| debug |testing main programing running
+2020-09-20 12:11:42| error |testing 
+2020-09-20 12:14:17| debug |testing main programing running
+2020-09-20 12:14:17| error |testing 
+2020-09-20 12:14:38| debug |testing main programing running
+2020-09-20 12:14:38| error |testing 
+2020-09-20 12:14:46| debug |testing main programing running
+2020-09-20 12:14:46| error |testing 
+2020-09-20 12:16:05| debug |testing server socket init success
+2020-09-20 12:16:36| debug |testing get socket connection: 0
+2020-09-20 12:16:37| debug |testing (DataQueue) get data: 2
+2020-09-20 12:16:37| debug |testing recv from client: 2
+2020-09-20 12:16:39| debug |testing (DataQueue) get data: 5
+2020-09-20 12:16:39| debug |testing recv from client: 5
+2020-09-20 12:16:41| debug |testing (DataQueue) get data: 3
+2020-09-20 12:16:41| debug |testing recv from client: 3
+2020-09-20 12:16:46| debug |testing (DataQueue) get data: 1
+2020-09-20 12:16:46| debug |testing recv from client: 1
+2020-09-20 12:16:48| debug |testing (DataQueue) get data: 2
+2020-09-20 12:16:48| debug |testing recv from client: 2
+2020-09-20 12:16:52| debug |testing (Server): free empty socket
+2020-09-20 12:52:17| debug |testing server socket init success
+2020-09-20 12:55:02| debug |testing server socket init success
+2020-09-20 13:01:13| debug |testing server socket init success
+2020-09-20 13:02:20| debug |testing server socket init success
+2020-09-20 13:03:31| debug |testing server socket init success
+2020-09-20 13:03:35| debug |testing 
+2020-09-20 13:04:51| debug |testing server socket init success
+2020-09-20 13:04:55| debug |testing (Client) connect fail
+2020-09-20 13:05:48| debug |testing server socket init success
+2020-09-20 13:05:52| debug |testing (Client) connect fail-1
+2020-09-20 13:07:14| debug |testing server socket init success
+2020-09-20 13:07:41| debug |testing server socket init success
+2020-09-20 13:07:44| debug |testing (Client) connect fail -1
+2020-09-20 13:11:03| debug |testing server socket init success
+2020-09-20 13:11:46| debug |testing server socket init success
+2020-09-20 13:11:49| debug |testing (Client) connect fail -1
+2020-09-20 13:37:12| debug |testing server socket init success
+2020-09-20 13:38:32| debug |testing server socket init success
+2020-09-20 13:38:34| debug |testing get socket connection: 0
+2020-09-20 13:38:54| debug |testing (Server): free empty socket
+2020-09-20 13:39:13| debug |testing server socket init success
+2020-09-20 13:39:16| debug |testing get socket connection: 0
+2020-09-20 13:39:16| debug |testing (Client) connect success
+2020-09-20 13:41:03| debug |testing server socket init success
+2020-09-20 13:41:10| error |testing 
+2020-09-20 13:41:29| debug |testing server socket init success
+2020-09-20 13:41:33| debug |testing get socket connection: 0
+2020-09-20 13:41:33| debug |testing (Client) connect success
+2020-09-20 14:31:32| debug |testing server socket init success
+2020-09-20 14:31:37| debug |testing get socket connection: 0
+2020-09-20 14:31:37| debug |testing (Client) connect success
+2020-09-20 14:31:38| debug |testing (DataQueue) get data: 2
+2020-09-20 14:31:40| debug |testing (Server): free empty socket
+2020-09-20 14:31:53| debug |testing get socket connection: 0
+2020-09-20 14:31:53| debug |testing (Client) connect success
+2020-09-20 14:31:55| debug |testing (DataQueue) get data: 555555
+2020-09-20 14:31:57| debug |testing (Server): free empty socket
+2020-09-20 14:33:47| debug |testing server socket init success
+2020-09-20 14:33:51| debug |testing get socket connection: 0
+2020-09-20 14:33:51| debug |testing (Client) connect success, start send&recv thread
+2020-09-20 14:33:54| debug |testing (DataQueue) get data: 555
+2020-09-20 14:33:56| debug |testing (Server): free empty socket
+2020-09-20 14:34:36| debug |testing server socket init success
+2020-09-20 14:34:41| debug |testing get socket connection: 0
+2020-09-20 14:34:41| debug |testing (Client) connect success, start send&recv thread
+2020-09-20 14:34:43| debug |testing (Server): free empty socket
+2020-09-20 14:37:14| debug |testing server socket init success
+2020-09-20 14:37:25| debug |testing server socket init success
+2020-09-20 14:37:33| debug |testing get socket connection: 0
+2020-09-20 14:37:33| debug |testing (Server): free empty socket
+2020-09-20 14:38:06| debug |testing server socket init success
+2020-09-20 14:38:08| debug |testing get socket connection: 0
+2020-09-20 14:38:08| debug |testing (Client) connect success, start send&recv thread
+2020-09-20 14:38:08| error |testing 
+2020-09-20 14:38:08| debug |testing (Server): free empty socket
+2020-09-20 14:39:16| debug |testing server socket init success
+2020-09-20 14:39:19| debug |testing get socket connection: 0
+2020-09-20 14:39:19| debug |testing (Client) connect success, start send&recv thread
+2020-09-20 14:39:19| error |testing 
+2020-09-20 14:39:19| debug |testing (Server): free empty socket
+2020-09-20 14:39:52| debug |testing server socket init success
+2020-09-20 14:39:55| debug |testing get socket connection: 0
+2020-09-20 14:39:55| debug |testing (Client) connect success, start send&recv thread
+2020-09-20 14:39:55| error |testing 
+2020-09-20 14:39:55| debug |testing (Server): free empty socket
+2020-09-20 14:41:06| debug |testing server socket init success
+2020-09-20 14:41:08| debug |testing get socket connection: 0
+2020-09-20 14:41:08| debug |testing (Client) connect success, start send&recv thread
+2020-09-20 14:41:08| error |testing 
+2020-09-20 14:41:08| debug |testing (Server): free empty socket
+2020-09-20 14:48:11| debug |testing server socket init success
+2020-09-20 14:48:14| debug |testing get socket connection: 0
+2020-09-20 14:48:14| debug |testing (Client) connect success, start send&recv thread
+2020-09-20 14:48:16| debug |testing (DataQueue) get data: 55
+2020-09-20 14:48:18| debug |testing (Server): free empty socket
+2020-09-20 14:49:22| debug |testing server socket init success
+2020-09-20 14:49:23| debug |testing get socket connection: 0
+2020-09-20 14:49:23| debug |testing (Client) connect success, start send&recv thread
+2020-09-20 14:49:25| debug |testing (DataQueue) get data: 5
+2020-09-20 14:49:27| debug |testing (Server): free empty socket
+2020-09-20 14:53:30| debug |testing server socket init success
+2020-09-20 14:53:33| debug |testing get socket connection: 0
+2020-09-20 14:53:33| debug |testing (Client) connect success, start send&recv thread
+2020-09-20 14:53:35| debug |testing (Server): free empty socket
+2020-09-20 14:54:54| debug |testing server socket init success
+2020-09-20 14:54:56| debug |testing get socket connection: 0
+2020-09-20 14:54:56| debug |testing (Client) connect success, start send&recv thread
+2020-09-20 14:54:57| debug |testing (Server): free empty socket

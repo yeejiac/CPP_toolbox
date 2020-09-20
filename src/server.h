@@ -17,6 +17,7 @@
 #include "../lib/logwriter.h"
 #include "connection.h"
 #include "../lib/initParser.h"
+#include "../lib/dataQueue.h"
 
 #define buffer 1024
 
@@ -33,9 +34,9 @@ public:
 	bool getconnStatus();
 	void freeEmptysocket();
 	Logwriter logwrite = Logwriter("testing");
-	
+	DataQueue *dq = new DataQueue(10);
+	InitParser *ip = new InitParser("D:\\program_file\\CPP_toolbox\\doc\\settings.ini", "socket");
 private:
-	int connLimit_ = 10;
 	WSADATA wsaData_;
 	int iniSignal_;
 	SOCKET listenSocket_;
@@ -51,7 +52,7 @@ private:
     std::condition_variable conncv_;
 	std::condition_variable limitLock_;
 	std::map<int, Connection*> connStorage_;
-	InitParser *ip = new InitParser("D:\\program_file\\CPP_toolbox\\doc\\settings.ini", "socket");
+	
 };
 
 
