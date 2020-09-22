@@ -7,7 +7,13 @@ std::string to_zero_lead(const int value, const unsigned precision)
      return oss.str();
 }
 
-Logwriter::Logwriter(std::string logType):logType_(logType){}
+Logwriter::Logwriter(std::string logType):logType_(logType)
+{
+    std::time_t t = std::time(0); 
+    std::tm* now = std::localtime(&t);
+    std::string datetiming = std::to_string(now->tm_year + 1900) + "-" + to_zero_lead(now->tm_mon + 1, 2)+ "-" + to_zero_lead(now->tm_mday,2);
+    filePath_ = "./doc/" + datetiming + "_log.txt";
+}
 
 std::string Logwriter::getTime()
 {

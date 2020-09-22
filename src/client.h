@@ -12,6 +12,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <thread>
+#include <chrono>
 
 #include "../lib/dataQueue.h"
 #include "../lib/initParser.h"
@@ -29,6 +30,7 @@ public:
     bool getConnStatus();
     void sendMsg();
     void recvMsg();
+    void reConnect();
     Logwriter logwrite = Logwriter("testing");
 	DataQueue *dq = new DataQueue(10);
 	InitParser *ip = new InitParser("D:\\program_file\\CPP_toolbox\\doc\\settings.ini", "socket");

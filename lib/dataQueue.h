@@ -15,6 +15,7 @@ public:
     DataQueue(int limitation);
     void pushDTA(std::string val);
     std::string popDTA();
+    int findVal(std::string);
     int checkSpace();
     Logwriter logwrite = Logwriter("testing");
 private:
