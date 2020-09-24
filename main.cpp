@@ -12,6 +12,7 @@ int main()
     // logwrite.writeLog("debug", "main programing running");
     // Server *sr = new Server;
     Client *cl = new Client;
+
     int a;
     std::cin>>a;
     return 0;

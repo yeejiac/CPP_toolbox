@@ -24,7 +24,7 @@ class Client
 {
 public:
     Client();
-    void socketini();
+    bool socketini();
     void allowConn();
     void setConnStatus(bool stat);
     bool getConnStatus();
@@ -46,8 +46,7 @@ private:
     SOCKET connectSocket_ = INVALID_SOCKET;
     char buffer_[buffer];
 	int recvbuflen_ = buffer;
-
-
-
+    std::mutex mutex_;
+    std::condition_variable cv_;
 };
 #endif

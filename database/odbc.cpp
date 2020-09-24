@@ -14,27 +14,26 @@ ODBC::ODBC()
     SQLSetEnvAttr(env_, SQL_ATTR_ODBC_VERSION, (void *) SQL_OV_ODBC3, 0);
     SQLAllocHandle(SQL_HANDLE_DBC, env_, &dbc_);
 
-    std::string command = "DRIVER={MySQL ODBC 3.51 Driver};"+"Server="+addr+";Port="+port+";Database="+database+";Uid="+user+";Pwd="+password+";";
+    std::string command = "DRIVER={MySQL ODBC 3.51 Driver};Server="+addr+";Port="+port+";Database="+database+";Uid="+user+";Pwd="+password+";";
     //command looks like this now:
     //"DRIVER={MySQL ODBC 3.51 Driver};SERVER=localhost;DATABASE=test;"
 
-    int ret = SQLDriverConnect(dbc_, NULL, (SQLWCHAR *)command.c_str(), SQL_NTS, NULL, 0, NULL, SQL_DRIVER_COMPLETE);
-
-    if (!SQL_SUCCEEDED(ret)) 
+    int ret_ = SQLDriverConnect(dbc_, NULL, (SQLCHAR *)command.c_str(), SQL_NTS, NULL, 0, NULL, SQL_DRIVER_COMPLETE);
+    if (ret_ == SQL_SUCCESS || ret_ == SQL_SUCCESS_WITH_INFO) 
     {
-        // errMsg_ += CONNECT_DATABASE*DATABASE_UNREACHABLE;
-        stat_ = false;
+        logwrite.writeLog("debug", "(ODBC) init success");
         return;
     }
     else 
     {
-        stat_ = true;
+        logwrite.writeLog("error", "(ODBC) init fail");
     }
 
     SQLAllocHandle(SQL_HANDLE_STMT, dbc_, &stmt_);
 
     // command = sysToStd(DBINIT);
 
-    SQLPrepare(stmt_, (SQLWCHAR *)command.c_str(), SQL_NTS);
-    ret = SQLExecute(stmt_);
+    SQLPrepare(stmt_, (SQLCHAR *)command.c_str(), SQL_NTS);
+    ret_ = SQLExecute(stmt_);
 }
+

@@ -23,7 +23,7 @@ OBJS=$(LIBS:.cpp=.o )
 
 main: $(CXXFILE)
 	g++ $(CXXFILE) $(BIN)static_package.a \
-	$(CXX) $(CLIENT_TARGET) $(CFLAGS) -lstdc++
+	$(CXX) $(CLIENT_TARGET) $(CFLAGS)
 
 # %.o: $(LIBS)
 # 	g++ -c -fPIC $(FILEPATH) $< -o $(BIN)$@
@@ -43,12 +43,8 @@ server:
 client:
 	g++ -c $(SRC)client.cpp -o $(BIN)cliet.o
 
-
 connection: 
 	g++ -c $(FILEPATH)connection.cpp -o $(BIN)connection.o
-
-
-# OFILE_LIST = initParser.o logwriter.o server.o
 
 %.a: 
 	ar crsv $(BIN)$@ $(wildcard $(BIN)*.o)

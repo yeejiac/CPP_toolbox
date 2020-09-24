@@ -6,6 +6,10 @@
 #include <sql.h>
 #include <sqlext.h>
 #include <stdio.h>
+#include <conio.h>
+#include <tchar.h>
+#include <stdlib.h>
+#include <sal.h>
 
 #include "../lib/logwriter.h"
 #include "../lib/initParser.h"
