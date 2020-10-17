@@ -7,12 +7,12 @@ std::string to_zero_lead(const int value, const unsigned precision)
      return oss.str();
 }
 
-Logwriter::Logwriter(std::string logType):logType_(logType)
+Logwriter::Logwriter(std::string logType, std::string filePath):logType_(logType)
 {
     std::time_t t = std::time(0); 
     std::tm* now = std::localtime(&t);
     std::string datetiming = std::to_string(now->tm_year + 1900) + "-" + to_zero_lead(now->tm_mon + 1, 2)+ "-" + to_zero_lead(now->tm_mday,2);
-    filePath_ = "./doc/" + datetiming + "_log.txt";
+    filePath_ = filePath + datetiming + ".log";
 }
 
 std::string Logwriter::getTime()
@@ -24,33 +24,33 @@ std::string Logwriter::getTime()
     return datetiming + " " + timing;
 }
 
-void Logwriter::writeLog(std::string level, std::string documentation)
+void Logwriter::write(std::string level, std::string documentation)
 {
     documentation_ = documentation;
-    if(level == "fatal")
+    if(level == "Fatal")
     {
         fatallevel();
         
     }
-    else if(level == "warn")
+    else if(level == "Warn")
     {
         warnlevel();
         std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
         log_file << logcontent_ + " " + documentation << std::endl;
     }
-    else if(level == "error")
+    else if(level == "Error")
     {
         errorlevel();
     }
-    else if(level == "debug")
+    else if(level == "Debug")
     {
         debuglevel();
     }
-    else if(level == "trace")
+    else if(level == "Trace")
     {
         tracelevel();
     }
-    else if(level == "info")
+    else if(level == "Info")
     {
         infolevel();
     }
@@ -59,39 +59,45 @@ void Logwriter::writeLog(std::string level, std::string documentation)
 
 void Logwriter::fatallevel()
 {
-    logcontent_ = getTime() + "| fatal |" + logType_;
+    logcontent_ = getTime() + " | Fatal | " + logType_;
     std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
     log_file << logcontent_ + " " + documentation_ << std::endl;
 }
 
 void Logwriter::warnlevel()
 {
-    logcontent_ = getTime() + "| warn |" + logType_;
+    logcontent_ = getTime() + " | Warn | " + logType_+ " |";
     std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
     log_file << logcontent_ + " " + documentation_ << std::endl;
 }
 
 void Logwriter::errorlevel()
 {
-    logcontent_ = getTime() + "| error |" + logType_;
+    logcontent_ = getTime() + " | Error | " + logType_+ " |";
     std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
     log_file << logcontent_ + " " + documentation_ << std::endl;
+    // system("D:\\program_file\\Python_toolbox\\lib\\mail_sending.exe");
 }
 
 void Logwriter::debuglevel()
 {
-    logcontent_ = getTime() + "| debug |" + logType_;
+    logcontent_ = getTime() + " | Debug | " + logType_+ " |";
     std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
     log_file << logcontent_ + " " + documentation_ << std::endl;
 }
 
 void Logwriter::tracelevel()
 {
-    logcontent_ = getTime() + "| trace |" + logType_;
+    logcontent_ = getTime() + " | Trace | " + logType_ + " |";
 }
 
 void Logwriter::infolevel()
 {
-    logcontent_ = getTime() + "| info |" + logType_;
+    logcontent_ = getTime() + " | Info | " + logType_+ " |";
 }
 
+// int main()
+// {
+//     Logwriter *logwriter = new Logwriter("FD", "../doc/log/");
+//     logwriter->write("Error", "testing");
+// }

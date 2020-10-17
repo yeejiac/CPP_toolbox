@@ -5,8 +5,8 @@ SRC=./src/
 SERVER=$(SRC)server.h
 CLIENT=$(SRC)client.h
 FILEPATH=-I. ./lib/ ./src/
-BIN=./bin/
 LIB=./lib/
+LIBPATH=-L.
 CXX=-std=c++11 -Wall
 THREAD=-lpthread
 DEBUG= -g
@@ -22,8 +22,8 @@ OBJS=$(LIBS:.cpp=.o )
 # libfile= $(LIB)logwriter.cpp
 
 main: $(CXXFILE)
-	g++ $(CXXFILE) $(BIN)static_package.a \
-	$(CXX) $(CLIENT_TARGET) $(CFLAGS)
+	g++ $(CXXFILE) -lcommon \
+	$(CXX) $(TARGET) $(CFLAGS)
 
 # %.o: $(LIBS)
 # 	g++ -c -fPIC $(FILEPATH) $< -o $(BIN)$@

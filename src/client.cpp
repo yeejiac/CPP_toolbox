@@ -1,6 +1,6 @@
 #include "client.h"
 
-Client::Client():connStatus_(true)
+Client::Client(std::string configSelect):connStatus_(true),configSelect_(configSelect)
 {
     allowConn();
     std::thread sendtd(&Client::sendMsg,this);
@@ -23,6 +23,7 @@ bool Client::getConnStatus()
 
 bool Client::socketini()
 {
+    InitParser *ip = new InitParser("D:\\program_file\\CPP_toolbox\\doc\\settings.ini", configSelect_);
     ip->readLine();
 	const char* port = ip->iniContainer["port"].c_str();
 	std::cout<<port<<std::endl;

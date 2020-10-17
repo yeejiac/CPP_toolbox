@@ -6,7 +6,7 @@ void DataQueue::pushDTA(std::string val)
 {
     std::unique_lock<std::mutex> lck(mutex_);
     dataQueue_.push(val);
-    logwrite.writeLog("debug", "(DataQueue) get data: "+val);
+    logwrite.write("debug", "(DataQueue) get data: "+val);
     // cv_.wait_for(lck, []{return this.checkSpace() < &limitation_;} );
     lck.unlock();
 }

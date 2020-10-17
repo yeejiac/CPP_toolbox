@@ -9,8 +9,8 @@
 class Logwriter
 {
 public:
-    Logwriter(std::string logType);
-    void writeLog(std::string level, std::string documentation);
+    Logwriter(std::string logType, std::string filePath);
+    void write(std::string level, std::string documentation);
     std::string getTime();
     void fatallevel();
     void warnlevel();
@@ -22,7 +22,7 @@ private:
     std::string logType_;
     std::string logcontent_;
     std::string documentation_;
-    std::string filePath_ = "./doc/log.txt";
+    std::string filePath_;
 };
 
 #endif 

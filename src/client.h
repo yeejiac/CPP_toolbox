@@ -23,7 +23,7 @@
 class Client
 {
 public:
-    Client();
+    Client(std::string configSelect);
     bool socketini();
     void allowConn();
     void setConnStatus(bool stat);
@@ -33,8 +33,9 @@ public:
     void reConnect();
     Logwriter logwrite = Logwriter("testing");
 	DataQueue *dq = new DataQueue(10);
-	InitParser *ip = new InitParser("D:\\program_file\\CPP_toolbox\\doc\\settings.ini", "socket");
+	
 private:
+    std::string configSelect_;
     bool connStatus_;
     WSADATA wsaData_;
     struct addrinfo *result_ = NULL;

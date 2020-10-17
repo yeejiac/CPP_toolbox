@@ -17,7 +17,7 @@ public:
     std::string popDTA();
     int findVal(std::string);
     int checkSpace();
-    Logwriter logwrite = Logwriter("testing");
+    Logwriter logwrite = Logwriter("FD", "../doc/log/");
 private:
     int limitation_;
     std::queue<std::string> dataQueue_;
