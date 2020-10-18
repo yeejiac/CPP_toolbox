@@ -13,11 +13,12 @@
 #include <condition_variable>
 #include <thread>
 #include <map>
+#include <dataQueue.h>
+#include <initParser.h>
+#include <logwriter.h>
 
-#include "../lib/logwriter.h"
 #include "connection.h"
-#include "../lib/initParser.h"
-#include "../lib/dataQueue.h"
+
 
 #define buffer 1024
 
@@ -33,7 +34,7 @@ public:
 	void setconnStatus(bool connStatus);
 	bool getconnStatus();
 	void freeEmptysocket();
-	Logwriter logwrite = Logwriter("testing");
+	Logwriter logwrite = Logwriter("SR", "../doc/log/");
 	DataQueue *dq = new DataQueue(10);
 	InitParser *ip = new InitParser("D:\\program_file\\CPP_toolbox\\doc\\settings.ini", "socket");
 private:

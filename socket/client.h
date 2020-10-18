@@ -14,9 +14,9 @@
 #include <thread>
 #include <chrono>
 
-#include "../lib/dataQueue.h"
-#include "../lib/initParser.h"
-#include "../lib/logwriter.h"
+#include <dataQueue.h>
+#include <initParser.h>
+#include <logwriter.h>
 
 #define buffer 1024
 
@@ -31,7 +31,7 @@ public:
     void sendMsg();
     void recvMsg();
     void reConnect();
-    Logwriter logwrite = Logwriter("testing");
+    Logwriter logwrite = Logwriter("CL", "../doc/log/");
 	DataQueue *dq = new DataQueue(10);
 	
 private:

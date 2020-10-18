@@ -1,15 +1,15 @@
-CFLAGS= -lWs2_32 -w
+CFLAGS= -lWs2_32 -w 
 # -lWs2_32 use for socket
 # -w ignore warning
-SRC=./src/
-SERVER=$(SRC)server.h
-CLIENT=$(SRC)client.h
+SOCKET=./socket/
+SERVER=$(SOCKET)server.cpp
+CLIENT=$(SOCKET)client.cpp
 FILEPATH=-I. ./lib/ ./src/
-LIB=./lib/
-LIBPATH=-L.
+LIB=-lcommon -lstdc++ -lpthread
+LIBPATH=./lib/
 CXX=-std=c++11 -Wall
 THREAD=-lpthread
-DEBUG= -g
+DEBUG=-DDEBUG -g
 
 CXXFILE=main.cpp
 TARGET=-o test.exe
@@ -19,11 +19,10 @@ CLIENT_TARGET=-o client.exe
 LIBS=$(wildcard $(LIB)*.cpp)
 OBJS=$(LIBS:.cpp=.o )
 
-# libfile= $(LIB)logwriter.cpp
 
 main: $(CXXFILE)
-	g++ $(CXXFILE) -lcommon \
-	$(CXX) $(TARGET) $(CFLAGS)
+	g++ $(DEBUG) $(CXXFILE) ./socket/connection.cpp $(SERVER) $(LIB) \
+	$(CXX) $(SERVER_TARGET) $(CFLAGS)
 
 # %.o: $(LIBS)
 # 	g++ -c -fPIC $(FILEPATH) $< -o $(BIN)$@
@@ -41,13 +40,13 @@ server:
 	g++ -c $(SRC)server.cpp -o $(BIN)server.o
 
 client:
-	g++ -c $(SRC)client.cpp -o $(BIN)cliet.o
+	g++ -c $(SOCKET)client.cpp -o $(LIBPATH)client.o
 
 connection: 
 	g++ -c $(FILEPATH)connection.cpp -o $(BIN)connection.o
 
 %.a: 
-	ar crsv $(BIN)$@ $(wildcard $(BIN)*.o)
+	ar crsv $(LIBPATH)$@ $(wildcard $(LIBPATH)*.o)
 
 # mainsocket: $(CXXFILE)
 # 	g++ $(CXXFILE) $(SERVER) $(CLIENT) \
