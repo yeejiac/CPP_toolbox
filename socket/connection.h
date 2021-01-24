@@ -4,9 +4,10 @@
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
-#include <winsock2.h>
-#include <Windows.h>
-#include <ws2tcpip.h>
+#include <netinet/in.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <errno.h>
 #include <string>
 #include <algorithm>
 #include <mutex>
@@ -14,8 +15,8 @@
 #include <thread>
 #include <chrono>
 
-#include <initParser.h>
-#include <logwriter.h>
+#include "../funclib/initParser.h"
+#include "../funclib/logwriter.h"
 
 #define buffer 1024
 

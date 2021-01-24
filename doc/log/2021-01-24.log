@@ -1,0 +1,665 @@
+2021-01-24 11:27:33 | Debug | SR | server socket init success
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 0
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | FD | (DataQueue) get data: Testing Msg
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 2
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 2
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 2
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 2
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 2
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 2
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 2
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 4
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 2
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 3
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 3
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 3
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 3
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 1
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 2
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 2
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 2
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | SR | get socket connection: 2
+2021-01-24 11:27:51 | Debug | SR | (Server): free empty socket
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | SR | (Server): lose connection
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Debug | CL | (Client) connect success 
+2021-01-24 11:27:51 | Error | CL | (Client) recv failed
+2021-01-24 11:27:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 11:27:51 | Warn | CL | (Client) Connection Failed
+2021-01-24 17:31:27 | Debug | SR | server socket init success
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 0
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | FD | (DataQueue) get data: Testing Msg
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 2
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 2
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 3
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 3
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 3
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 3
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 3
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 1
+2021-01-24 17:31:35 | Error | CL | (Client) recv failed
+2021-01-24 17:31:35 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:31:35 | Debug | CL | (Client) connect success 
+2021-01-24 17:31:35 | Debug | SR | get socket connection: 2
+2021-01-24 17:31:35 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:35 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): free empty socket
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | FD | (DataQueue) get data: Testing Msg
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:37 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | FD | (DataQueue) get data: Testing Msg
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:31:39 | Debug | SR | (Server): lose connection
+2021-01-24 17:39:59 | Debug | SR | server socket init success
+2021-01-24 17:41:10 | Debug | SR | get socket connection: 0
+2021-01-24 17:41:13 | Debug | FD | (DataQueue) get data: 1
+2021-01-24 17:41:15 | Debug | FD | (DataQueue) get data: 2
+2021-01-24 17:41:17 | Debug | FD | (DataQueue) get data: 3
+2021-01-24 17:41:19 | Debug | FD | (DataQueue) get data: 4
+2021-01-24 17:41:21 | Debug | FD | (DataQueue) get data: 5
+2021-01-24 17:41:49 | Debug | SR | get socket connection: 1
+2021-01-24 17:41:57 | Debug | FD | (DataQueue) get data: 5555
+2021-01-24 17:41:59 | Debug | FD | (DataQueue) get data: 1
+2021-01-24 17:42:02 | Debug | FD | (DataQueue) get data: 8888
+2021-01-24 17:42:04 | Debug | FD | (DataQueue) get data: 2
+2021-01-24 17:42:06 | Debug | FD | (DataQueue) get data: 3
+2021-01-24 17:42:38 | Debug | SR | (Server): free empty socket
+2021-01-24 17:42:38 | Debug | SR | (Server): lose connection
+2021-01-24 17:42:39 | Debug | SR | (Server): free empty socket
+2021-01-24 17:42:40 | Debug | SR | (Server): lose connection
+2021-01-24 17:42:42 | Debug | SR | (Server): lose connection
+2021-01-24 17:42:45 | Debug | SR | (Server): lose connection
+2021-01-24 17:42:47 | Debug | SR | (Server): lose connection
+2021-01-24 17:42:49 | Debug | SR | (Server): lose connection
+2021-01-24 17:45:46 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:45:46 | Warn | CL | (Client) Connection Failed
+2021-01-24 17:45:51 | Debug | CL | (Client) try connect
+2021-01-24 17:45:51 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:45:51 | Warn | CL | (Client) Connection Failed
+2021-01-24 17:45:54 | Debug | SR | server socket init success
+2021-01-24 17:45:56 | Debug | CL | (Client) try connect
+2021-01-24 17:45:56 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:45:56 | Debug | CL | (Client) connect success 
+2021-01-24 17:45:56 | Error | CL | (Client) recv failed
+2021-01-24 17:45:56 | Debug | SR | get socket connection: 0
+2021-01-24 17:45:56 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:45:56 | Debug | SR | (Server): free empty socket
+2021-01-24 17:45:56 | Debug | CL | (Client) connect success 
+2021-01-24 17:45:56 | Debug | SR | get socket connection: 0
+2021-01-24 17:45:56 | Error | CL | (Client) recv failed
+2021-01-24 17:45:56 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:45:56 | Debug | SR | get socket connection: 0
+2021-01-24 17:45:56 | Debug | CL | (Client) connect success 
+2021-01-24 17:45:56 | Debug | SR | get socket connection: 1
+2021-01-24 17:45:56 | Debug | SR | (Server): free empty socket
+2021-01-24 17:45:56 | Error | CL | (Client) recv failed
+2021-01-24 17:45:56 | Debug | SR | (Server): lose connection
+2021-01-24 17:45:56 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:45:56 | Debug | CL | (Client) connect success 
+2021-01-24 17:45:56 | Debug | SR | (Server): free empty socket
+2021-01-24 17:45:56 | Error | CL | (Client) recv failed
+2021-01-24 17:45:56 | Debug | SR | (Server): free empty socket
+2021-01-24 17:45:56 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:45:56 | Debug | SR | (Server): lose connection
+2021-01-24 17:45:56 | Debug | CL | (Client) connect success 
+2021-01-24 17:45:56 | Debug | SR | (Server): lose connection
+2021-01-24 17:45:56 | Debug | SR | (Server): lose connection
+2021-01-24 17:45:56 | Error | CL | (Client) recv failed
+2021-01-24 17:45:56 | Debug | SR | (Server): free empty socket
+2021-01-24 17:45:56 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:45:56 | Debug | CL | (Client) connect success 
+2021-01-24 17:45:56 | Debug | SR | get socket connection: 0
+2021-01-24 17:45:56 | Error | CL | (Client) recv failed
+2021-01-24 17:45:56 | Debug | SR | get socket connection: 0
+2021-01-24 17:45:56 | Debug | SR | (Server): free empty socket
+2021-01-24 17:45:56 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:45:56 | Debug | CL | (Client) connect success 
+2021-01-24 17:45:56 | Error | CL | (Client) recv failed
+2021-01-24 17:45:56 | Debug | SR | (Server): lose connection
+2021-01-24 17:45:56 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:45:56 | Debug | CL | (Client) connect success 
+2021-01-24 17:45:56 | Error | CL | (Client) recv failed
+2021-01-24 17:45:56 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:45:56 | Debug | CL | (Client) connect success 
+2021-01-24 17:45:56 | Error | CL | (Client) recv failed
+2021-01-24 17:45:56 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:45:56 | Warn | CL | (Client) Connection Failed
+2021-01-24 17:49:59 | Debug | SR | server socket init success
+2021-01-24 17:50:04 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:50:04 | Debug | CL | (Client) connect success 
+2021-01-24 17:50:04 | Debug | SR | get socket connection: 0
+2021-01-24 17:50:06 | Debug | SR | (Server): free empty socket
+2021-01-24 17:50:47 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:50:47 | Debug | SR | (Server): lose connection
+2021-01-24 17:50:47 | Debug | CL | (Client) connect success 
+2021-01-24 17:50:47 | Error | CL | (Client) recv failed
+2021-01-24 17:50:47 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:50:47 | Warn | CL | (Client) Connection Failed
+2021-01-24 17:50:52 | Debug | CL | (Client) try connect
+2021-01-24 17:50:52 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:50:52 | Warn | CL | (Client) Connection Failed
+2021-01-24 17:50:55 | Warn | SR | bind failed with Error: 
+2021-01-24 17:50:57 | Debug | CL | (Client) try connect
+2021-01-24 17:50:57 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-24 17:50:57 | Warn | CL | (Client) Connection Failed
+2021-01-24 17:51:05 | Warn | SR | bind failed with Error: 
+2021-01-24 17:51:22 | Debug | SR | server socket init success
+2021-01-24 17:51:25 | Debug | CL | (Client) connect to 127.0.0.1 1202
+2021-01-24 17:51:25 | Debug | SR | get socket connection: 0
+2021-01-24 17:51:25 | Debug | CL | (Client) connect success 
+2021-01-24 19:18:49 | Debug | CL | (Client) connect to 127.0.0.1 1202
+2021-01-24 19:18:49 | Debug | CL | (Client) connect success 
+2021-01-24 19:18:49 | Debug | SR | get socket connection: 1
+2021-01-24 19:18:53 | Debug | SR | (Server): free empty socket
+2021-01-24 19:18:53 | Debug | SR | (Server): lose connection
+2021-01-24 19:18:54 | Debug | SR | (Server): free empty socket

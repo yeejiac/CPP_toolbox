@@ -1,7 +1,5 @@
 #include "main.h"
 
-
-
 int main()
 {
     Server *sr = new Server;

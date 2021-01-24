@@ -24,80 +24,41 @@ std::string Logwriter::getTime()
     return datetiming + " " + timing;
 }
 
-void Logwriter::write(std::string level, std::string documentation)
+void Logwriter::write(LogLevel level, std::string documentation)
 {
     documentation_ = documentation;
-    if(level == "Fatal")
+    if(level == LogLevel::FATAL)
     {
-        fatallevel();
-        
+        logcontent_ = getTime() + " | Fatal | " + logType_;
     }
-    else if(level == "Warn")
+    else if(level == LogLevel::WARN)
     {
-        warnlevel();
-        std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
-        log_file << logcontent_ + " " + documentation << std::endl;
+        logcontent_ = getTime() + " | Warn | " + logType_+ " |";
     }
-    else if(level == "Error")
+    else if(level == LogLevel::ERROR)
     {
-        errorlevel();
+        logcontent_ = getTime() + " | Error | " + logType_+ " |";
     }
-    else if(level == "Debug")
+    else if(level == LogLevel::DEBUG)
     {
-        debuglevel();
+        logcontent_ = getTime() + " | Debug | " + logType_+ " |";
     }
-    else if(level == "Trace")
+    else if(level == LogLevel::TRACE)
     {
-        tracelevel();
+        logcontent_ = getTime() + " | Trace | " + logType_ + " |";
     }
-    else if(level == "Info")
+    else if(level == LogLevel::INFO)
     {
-        infolevel();
+        logcontent_ = getTime() + " | Info | " + logType_+ " |";
     }
+    std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
+    log_file << logcontent_ + " " + documentation_ << std::endl;
     std::cout<<logcontent_ + " " + documentation_<<std::endl;
 }
 
-void Logwriter::fatallevel()
-{
-    logcontent_ = getTime() + " | Fatal | " + logType_;
-    std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
-    log_file << logcontent_ + " " + documentation_ << std::endl;
-}
-
-void Logwriter::warnlevel()
-{
-    logcontent_ = getTime() + " | Warn | " + logType_+ " |";
-    std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
-    log_file << logcontent_ + " " + documentation_ << std::endl;
-}
-
-void Logwriter::errorlevel()
-{
-    logcontent_ = getTime() + " | Error | " + logType_+ " |";
-    std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
-    log_file << logcontent_ + " " + documentation_ << std::endl;
-    // system("D:\\program_file\\Python_toolbox\\lib\\mail_sending.exe");
-}
-
-void Logwriter::debuglevel()
-{
-    logcontent_ = getTime() + " | Debug | " + logType_+ " |";
-    std::ofstream log_file(filePath_.c_str(), std::ios_base::out | std::ios_base::app );
-    log_file << logcontent_ + " " + documentation_ << std::endl;
-}
-
-void Logwriter::tracelevel()
-{
-    logcontent_ = getTime() + " | Trace | " + logType_ + " |";
-}
-
-void Logwriter::infolevel()
-{
-    logcontent_ = getTime() + " | Info | " + logType_+ " |";
-}
 
 // int main()
 // {
-//     Logwriter *logwriter = new Logwriter("FD", "../doc/log/");
-//     logwriter->write("Error", "testing");
+//     Logwriter *logwriter = new Logwriter("FD", "../log/");
+//     logwriter->write(LogLevel::ERROR, "testing");
 // }

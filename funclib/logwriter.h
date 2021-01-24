@@ -6,18 +6,23 @@
 #include <fstream>
 #include <iomanip>
 
+enum LogLevel
+{
+    FATAL,
+    WARN,
+    ERROR,
+    DEBUG,
+    TRACE,
+    INFO
+};
+
 class Logwriter
 {
 public:
     Logwriter(std::string logType, std::string filePath);
-    void write(std::string level, std::string documentation);
+    void write(LogLevel level, std::string documentation);
     std::string getTime();
-    void fatallevel();
-    void warnlevel();
-    void errorlevel();
-    void debuglevel();
-    void tracelevel();
-    void infolevel();
+    
 private:
     std::string logType_;
     std::string logcontent_;

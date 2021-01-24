@@ -3,9 +3,9 @@
 Client::Client(std::string configSelect):connStatus_(true),configSelect_(configSelect)
 {
     allowConn();
-    std::thread sendtd(&Client::sendMsg,this);
+    //std::thread sendtd(&Client::sendMsg,this);
     std::thread recvtd(&Client::recvMsg,this);
-    sendtd.detach();
+    //sendtd.detach();
     recvtd.join();
     std::this_thread::sleep_for(std::chrono::seconds(2));
 };
@@ -22,70 +22,54 @@ bool Client::getConnStatus()
 	return connStatus_;
 }
 
-bool Client::socketini()
+void Client::socketini()
 {
-    InitParser *ip = new InitParser("D:\\program_file\\CPP_toolbox\\doc\\settings.ini", configSelect_);
+    InitParser *ip = new InitParser("../doc/settings.ini", configSelect_);
     ip->readLine();
-	const char* port = ip->iniContainer["port"].c_str();
 	const char* addr = ip->iniContainer["addr"].c_str();
+	int port = std::stoi(ip->iniContainer["port"]);
+    logwrite.write(LogLevel::DEBUG, "(Client) connect to " + ip->iniContainer["addr"] + " " + ip->iniContainer["port"]);
 	
-    WSAStartup(MAKEWORD(2,2), &wsaData_);
-    if(iniSignal_ != 0)
-	{
-		logwrite.write("Error", "(Client) WSAStartup failed with error ");
-		// exit(1);
-	}
+    if ((sockfd_ = socket(AF_INET, SOCK_STREAM, 0)) < 0) 
+    { 
+        logwrite.write(LogLevel::WARN, "(Client) socket initialise failed");
+        return;
+    }
 
     int addlen = sizeof(addr);
 
-    ZeroMemory( &hints_, sizeof(hints_) );
-    hints_.ai_family = AF_INET;
-    hints_.ai_socktype = SOCK_STREAM;
-    hints_.ai_protocol = IPPROTO_TCP;
+    serv_addr_.sin_family = AF_INET;
+    serv_addr_.sin_port = htons(port);
 
-    iniSignal_ = getaddrinfo(addr, port, &hints_, &result_);
-	if(iniSignal_ != 0)
-	{
-		logwrite.write("Error", "(Client) getaddrinfo failed with error ");
-		WSACleanup();
-		// exit(1);
-	}
-
-    connectSocket_ = socket(result_->ai_family, result_->ai_socktype, result_->ai_protocol);
-    if (connectSocket_ == SOCKET_ERROR) 
-    {
-        logwrite.write("Error", "(Client) connect failed with error" );
-		WSACleanup();
-		// exit(1);
+    if(inet_pton(AF_INET, "127.0.0.1", &serv_addr_.sin_addr)<=0)  
+    { 
+        logwrite.write(LogLevel::WARN, "(Client) Invalid address/ Address not supported");
+        setConnStatus(false);
+        return; 
     }
-    iniSignal_ = connect(connectSocket_, result_->ai_addr, (int)result_->ai_addrlen);
-    setConnStatus(iniSignal_!=0?false:true);
-    if(getConnStatus())
-    {
-        logwrite.write("Debug", "(Client) Socket Init success" );
-        return true;
-    }    
-    else
-    {
-        logwrite.write("Debug", "(Client) Socket Init failed" );
-        return false;
-    }
-        
 
+    if (connect(sockfd_, (struct sockaddr *)&serv_addr_, sizeof(serv_addr_)) < 0) 
+    { 
+        logwrite.write(LogLevel::WARN, "(Client) Connection Failed");
+        setConnStatus(false);
+        return;
+    }
+    setConnStatus(true);
 }
 
 void Client::allowConn()
 {
     while(true)
     {
-        if (socketini()) 
+        socketini();
+        if (getConnStatus()) 
         {
-            logwrite.write("Debug", "(Client) connect success ");
+            logwrite.write(LogLevel::DEBUG, "(Client) connect success ");
             cv_.notify_all();
             break;
         }
         std::this_thread::sleep_for(std::chrono::seconds(5));
-        logwrite.write("Debug", "(Client) try connect" );
+        logwrite.write(LogLevel::DEBUG, "(Client) try connect" );
     }
 }
 
@@ -94,10 +78,10 @@ void Client::sendMsg()
     while(true)
     {
         std::string str = "Testing Msg";
-        sendSignal_ = send(connectSocket_, str.c_str(), recvbuflen_, 0);
+        sendSignal_ = send(sockfd_, str.c_str(), recvbuflen_, 0);
         if(sendSignal_<0)
         {
-            logwrite.write("Error", "(Client) send failed");
+            logwrite.write(LogLevel::ERROR, "(Client) send failed");
             std::unique_lock<std::mutex> lck2(mutex_);
             cv_.wait(lck2);
         }
@@ -112,7 +96,7 @@ void Client::recvMsg()
 {
     while(true)
     {
-        recvSignal_ = recv(connectSocket_, buffer_, recvbuflen_, 0);
+        recvSignal_ = recv(sockfd_, buffer_, recvbuflen_, 0);
         if ( recvSignal_ > 0 )
         {
             buffer_[recvSignal_] = '\0';
@@ -120,8 +104,8 @@ void Client::recvMsg()
         }
         else
         {
-            logwrite.write("Error", "(Client) recv failed");
-            closesocket(connectSocket_);
+            logwrite.write(LogLevel::ERROR, "(Client) recv failed");
+            close(sockfd_);
             setConnStatus(false);
             std::thread reconn(&Client::allowConn,this);
             reconn.detach();
@@ -129,6 +113,11 @@ void Client::recvMsg()
             cv_.wait(lck2);
         }
     }
+}
+
+int main()
+{
+    Client *cl = new Client("socket");
 }
 
 

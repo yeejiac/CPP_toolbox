@@ -1,0 +1,22 @@
+2021-01-23 14:13:14 | Debug | CL | (Client) connect to 127.0.0.1
+2021-01-23 14:13:19 | Debug | CL | (Client) try connect
+2021-01-23 14:13:19 | Debug | CL | (Client) connect to 127.0.0.1
+2021-01-23 14:13:39 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-23 14:13:44 | Debug | CL | (Client) try connect
+2021-01-23 14:13:44 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-23 14:13:49 | Debug | CL | (Client) try connect
+2021-01-23 14:13:49 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-23 14:28:01 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-23 14:28:01 | Warn | CL | (Client) Connection Failed
+2021-01-23 14:28:06 | Debug | CL | (Client) try connect
+2021-01-23 14:28:06 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-23 14:28:06 | Warn | CL | (Client) Connection Failed
+2021-01-23 14:28:11 | Debug | CL | (Client) try connect
+2021-01-23 14:28:11 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-23 14:28:11 | Warn | CL | (Client) Connection Failed
+2021-01-23 14:28:16 | Debug | CL | (Client) try connect
+2021-01-23 14:28:16 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-23 14:28:16 | Warn | CL | (Client) Connection Failed
+2021-01-23 14:28:21 | Debug | CL | (Client) try connect
+2021-01-23 14:28:21 | Debug | CL | (Client) connect to 127.0.0.1 1201
+2021-01-23 14:28:21 | Warn | CL | (Client) Connection Failed

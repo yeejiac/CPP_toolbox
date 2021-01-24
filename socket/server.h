@@ -4,18 +4,20 @@
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
-#include <winsock2.h>
-#include <Windows.h>
-#include <ws2tcpip.h>
-#include <string>
+#include <string.h>
+#include <unistd.h>
 #include <algorithm>
 #include <mutex>
 #include <condition_variable>
+#include <netinet/in.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <errno.h>
 #include <thread>
 #include <map>
-#include <dataQueue.h>
-#include <initParser.h>
-#include <logwriter.h>
+#include "../funclib/dataQueue.h"
+#include "../funclib/initParser.h"
+#include "../funclib/logwriter.h"
 
 #include "connection.h"
 
@@ -36,14 +38,11 @@ public:
 	void freeEmptysocket();
 	Logwriter logwrite = Logwriter("SR", "../doc/log/");
 	DataQueue *dq = new DataQueue(10);
-	InitParser *ip = new InitParser("D:\\program_file\\CPP_toolbox\\doc\\settings.ini", "socket");
+	InitParser *ip = new InitParser("../doc/settings.ini", "socket");
 private:
-	WSADATA wsaData_;
-	int iniSignal_;
-	SOCKET listenSocket_;
-	SOCKET clientSocket_;
-	struct addrinfo *result_ = NULL;
-	struct addrinfo hints_;
+	int listenfd_;
+	int connfd_;
+	struct sockaddr_in servaddr_;
 	int iSendResult_;
 	char buffer_[buffer];
 	int recvbuflen_ = buffer;

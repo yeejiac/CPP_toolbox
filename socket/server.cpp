@@ -5,16 +5,12 @@ Server::Server()
 {
 	socketini();
 	std::thread connacpt(&Server::acceptConn,this);
-	// std::thread recvConn(&Server::recv_conn,this);
-	connacpt.join();
-	// recvConn.detach();
+	connacpt.detach();
 }
 
 Server::~Server()
 {
-	iniSignal_ = shutdown(clientSocket_, SD_SEND);
-	closesocket(clientSocket_);
-	WSACleanup();
+	close(connfd_);
 }
 
 void Server::setconnStatus(bool connStatus)
@@ -30,75 +26,44 @@ bool Server::getconnStatus()
 void Server::socketini()
 {
 	ip->readLine();
-	const char* port = ip->iniContainer["port"].c_str();
+	int port = std::stoi(ip->iniContainer["port"]);
 	std::cout<<port<<std::endl;
 	const char* addr = ip->iniContainer["addr"].c_str();
 	std::cout<<addr<<std::endl;
-	iniSignal_ = WSAStartup(MAKEWORD(2,2), &wsaData_);
-	if(iniSignal_ != 0)
+	if( (listenfd_ = socket(AF_INET, SOCK_STREAM, 0)) == -1 )
 	{
-		logwrite.write("Error", "WSAStartup failed with Error: " + iniSignal_);
-		exit(1);
-	}
-	memset(&hints_, 0,sizeof(hints_));
-	hints_.ai_family = AF_INET;
-	hints_.ai_socktype = SOCK_STREAM;
-	hints_.ai_protocol = IPPROTO_TCP;
-	hints_.ai_flags = AI_PASSIVE;
-	
-	iniSignal_ = getaddrinfo(addr, port, &hints_, &result_);
-	if(iniSignal_ != 0)
-	{
-		logwrite.write("Error", "getaddrinfo failed with Error: " + iniSignal_);
-		WSACleanup();
-		exit(1);
-	}
-	
-	listenSocket_ = socket(result_->ai_family, result_->ai_socktype, result_->ai_protocol);
-	if(listenSocket_ == INVALID_SOCKET)
-	{
-		logwrite.write("Error", "socket failed with Error: "+ WSAGetLastError());
-		freeaddrinfo(result_);
-		WSACleanup();
-		exit(1);
-	}
-	
-	iniSignal_ = bind( listenSocket_, result_->ai_addr, (int)result_->ai_addrlen);
-    if (iniSignal_ == SOCKET_ERROR) 
-	{
-		logwrite.write("Error", "bind failed with Error: " + WSAGetLastError());
-        freeaddrinfo(result_);
-        closesocket(listenSocket_);
-        WSACleanup();
-        exit(1);
+        printf("create socket error: %s(errno: %d)\n");
+        return;
     }
-	freeaddrinfo(result_);
+	memset(&servaddr_, 0,sizeof(servaddr_));
+	servaddr_.sin_family = AF_INET;
+	servaddr_.sin_port = htons(port);
 	
-	iniSignal_ = listen( listenSocket_, SOMAXCONN);
-    if (iniSignal_ == SOCKET_ERROR) 
+    if (bind( listenfd_, (struct sockaddr*)&servaddr_, sizeof(servaddr_)) == -1) 
 	{
-		logwrite.write("Error", "listen failed with Error: " + WSAGetLastError());
-		std::cout<<"listen failed with Error: "<< WSAGetLastError()<<std::endl;
-        closesocket(listenSocket_);
-        WSACleanup();
-        exit(1);
+		logwrite.write(LogLevel::WARN, "bind failed with Error: ");
+        return;
+    }
+
+	
+    if (listen( listenfd_, SOMAXCONN) == -1) 
+	{
+		logwrite.write(LogLevel::WARN, "listen failed with Error: ");
+		return;
 	}
 	setconnStatus(true);
-	logwrite.write("Debug", "server socket init success");
+	logwrite.write(LogLevel::DEBUG, "server socket init success");
 }
 
 void Server::acceptConn()
 {
 	while(getconnStatus())
 	{
-		clientSocket_ = accept(listenSocket_, (struct sockaddr *)&result_, NULL);
-		if(clientSocket_ == INVALID_SOCKET)
+		connfd_ = accept(listenfd_, (struct sockaddr *)NULL, NULL);
+		if(connfd_ == -1)
 		{
-			std::cout<<"accept failed with Error: "<< WSAGetLastError()<<std::endl;
-			logwrite.write("Error", "accept failed with Error: " + WSAGetLastError());
-			closesocket(listenSocket_);
-			WSACleanup();
-			exit(1);
+			logwrite.write(LogLevel::WARN, "accept failed with Error: ");
+			continue;
 		}
 		else
 		{
@@ -106,18 +71,15 @@ void Server::acceptConn()
 			std::string connPortNum;
 
 			std::unique_lock<std::mutex> lck3(mutex_);
-			Connection *cn = new Connection(clientSocket_);
+			Connection *cn = new Connection(connfd_);
 			int space = connStorage_.size();
 			std::pair<int, Connection*> tmp(space, cn);
 			connStorage_.insert(tmp);
 			lck3.unlock();
-
-			logwrite.write("Debug", "get socket connection: "+std::to_string(space));
+			logwrite.write(LogLevel::DEBUG, "get socket connection: "+std::to_string(space));
 			
-
 			std::thread recvConn(&Server::msgRecv, this, cn);
 			recvConn.detach();
-			// st_.wait(lck3);
 
 		}
 	}
@@ -140,7 +102,7 @@ void Server::msgRecv(Connection *cn)
 		{
 			st_.notify_one();
 			freeEmptysocket();
-			// logwrite.write("Debug", "(Server): lose connection");
+			logwrite.write(LogLevel::DEBUG, "(Server): lose connection");
 		}
 		std::this_thread::sleep_for(std::chrono::seconds(2));
 	}
@@ -153,11 +115,16 @@ void Server::freeEmptysocket()
 	{
 		if(!it->second->getRecvStatus())
 		{
-			logwrite.write("Debug", "(Server): free empty socket");
+			logwrite.write(LogLevel::DEBUG, "(Server): free empty socket");
 			std::unique_lock<std::mutex> lckerase(mutex_);
 			it = connStorage_.erase(it);
 			lckerase.unlock();
 		}
 	}
+}
+
+int main()
+{
+	Server *sr = new Server;
 }
 

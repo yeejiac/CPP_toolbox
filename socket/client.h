@@ -4,19 +4,19 @@
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
-#include <winsock2.h>
-#include <Windows.h>
-#include <ws2tcpip.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <arpa/inet.h> 
 #include <string>
 #include <algorithm>
-#include <mutex>
-#include <condition_variable>
 #include <thread>
 #include <chrono>
+#include <mutex>
+#include <condition_variable>
 
-#include <dataQueue.h>
-#include <initParser.h>
-#include <logwriter.h>
+#include "../funclib/dataQueue.h"
+#include "../funclib/initParser.h"
+#include "../funclib/logwriter.h"
 
 #define buffer 1024
 
@@ -24,7 +24,7 @@ class Client
 {
 public:
     Client(std::string configSelect);
-    bool socketini();
+    void socketini();
     void allowConn();
     void setConnStatus(bool stat);
     bool getConnStatus();
@@ -36,15 +36,13 @@ public:
 	
 private:
     std::string configSelect_;
-    bool connStatus_;
-    WSADATA wsaData_;
-    struct addrinfo *result_ = NULL;
-    struct addrinfo *ptr_ = NULL;
-    struct addrinfo hints_;
+    bool connStatus_ = false;
+    int sockfd_;
+    struct sockaddr_in serv_addr_ ;
+    struct sockaddr_in *ptr_ = NULL;
     int iniSignal_;
     int sendSignal_;
     int recvSignal_;
-    SOCKET connectSocket_ = INVALID_SOCKET;
     char buffer_[buffer];
 	int recvbuflen_ = buffer;
     std::mutex mutex_;

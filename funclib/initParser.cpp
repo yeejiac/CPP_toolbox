@@ -69,7 +69,8 @@ void InitParser::readLine()
 //     InitParser *ip = new InitParser("../doc/settings.ini", "socket");
 //     ip->readLine();
 //     std::cout<<ip->iniContainer["addr"]<<std::endl;
+//     std::cout<<ip->iniContainer["port"]<<std::endl;
 //     return 0;
 // }
 
-// g++ -std=c++11 -Wall initParser.cpp -o test.exe
+// g++ -std=c++11 -Wall initParser.cpp -o test.out
