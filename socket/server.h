@@ -27,7 +27,7 @@
 class Server
 {
 public:
-	Server();
+	Server(std::string initFilePath, std::string initchosen, std::string logPath);
 	~Server();
 	void socketini();
 	void acceptConn();
@@ -36,9 +36,9 @@ public:
 	void setconnStatus(bool connStatus);
 	bool getconnStatus();
 	void freeEmptysocket();
-	Logwriter logwrite = Logwriter("SR", "../doc/log/");
+	Logwriter *logwrite;
 	DataQueue *dq = new DataQueue(10);
-	InitParser *ip = new InitParser("../doc/settings.ini", "socket");
+	InitParser *ip;
 private:
 	int listenfd_;
 	int connfd_;

@@ -1,11 +1,13 @@
 #include "server.h"
 
 
-Server::Server()
+Server::Server(std::string initFilePath, std::string initchosen, std::string logPath)
 {
+	logwrite = new Logwriter("SR", logPath);
+	ip = new InitParser(initFilePath, initchosen);
 	socketini();
 	std::thread connacpt(&Server::acceptConn,this);
-	connacpt.detach();
+	connacpt.join();
 }
 
 Server::~Server()
@@ -41,18 +43,18 @@ void Server::socketini()
 	
     if (bind( listenfd_, (struct sockaddr*)&servaddr_, sizeof(servaddr_)) == -1) 
 	{
-		logwrite.write(LogLevel::WARN, "bind failed with Error: ");
+		logwrite->write(LogLevel::WARN, "bind failed with Error: ");
         return;
     }
 
 	
     if (listen( listenfd_, SOMAXCONN) == -1) 
 	{
-		logwrite.write(LogLevel::WARN, "listen failed with Error: ");
+		logwrite->write(LogLevel::WARN, "listen failed with Error: ");
 		return;
 	}
 	setconnStatus(true);
-	logwrite.write(LogLevel::DEBUG, "server socket init success");
+	logwrite->write(LogLevel::DEBUG, "server socket init success");
 }
 
 void Server::acceptConn()
@@ -62,7 +64,7 @@ void Server::acceptConn()
 		connfd_ = accept(listenfd_, (struct sockaddr *)NULL, NULL);
 		if(connfd_ == -1)
 		{
-			logwrite.write(LogLevel::WARN, "accept failed with Error: ");
+			logwrite->write(LogLevel::WARN, "accept failed with Error: ");
 			continue;
 		}
 		else
@@ -76,7 +78,7 @@ void Server::acceptConn()
 			std::pair<int, Connection*> tmp(space, cn);
 			connStorage_.insert(tmp);
 			lck3.unlock();
-			logwrite.write(LogLevel::DEBUG, "get socket connection: "+std::to_string(space));
+			logwrite->write(LogLevel::DEBUG, "get socket connection: "+std::to_string(space));
 			
 			std::thread recvConn(&Server::msgRecv, this, cn);
 			recvConn.detach();
@@ -102,7 +104,6 @@ void Server::msgRecv(Connection *cn)
 		{
 			st_.notify_one();
 			freeEmptysocket();
-			logwrite.write(LogLevel::DEBUG, "(Server): lose connection");
 		}
 		std::this_thread::sleep_for(std::chrono::seconds(2));
 	}
@@ -115,7 +116,7 @@ void Server::freeEmptysocket()
 	{
 		if(!it->second->getRecvStatus())
 		{
-			logwrite.write(LogLevel::DEBUG, "(Server): free empty socket");
+			logwrite->write(LogLevel::DEBUG, "(Server): free empty socket");
 			std::unique_lock<std::mutex> lckerase(mutex_);
 			it = connStorage_.erase(it);
 			lckerase.unlock();
@@ -123,8 +124,8 @@ void Server::freeEmptysocket()
 	}
 }
 
-int main()
-{
-	Server *sr = new Server;
-}
+// int main()
+// {
+// 	Server *sr = new Server;
+// }
 

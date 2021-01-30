@@ -6,7 +6,7 @@ SERVER=$(SOCKET)server.cpp
 CLIENT=$(SOCKET)client.cpp
 FILEPATH=./funclib/
 LIBPATH=./lib/
-CXX=-std=c++11 -Wall -W
+CXX=-std=c++11 -Wall -W -pthread
 THREAD=-lpthread
 DEBUG= -g -w
 BIN=./lib/
@@ -23,7 +23,7 @@ OBJS=$(LIBS:.cpp=.o )
 OFILE=$(wildcard $(LIBPATH)*.o)
 
 main: $(CXXFILE)
-	g++ $(DEBUG) $(CXXFILE) ./funclib/logwriter.cpp ./funclib/initParser.cpp ./funclib/dataQueue.cpp ./socket/connection.cpp  $(SERVER) \
+	g++ $(DEBUG) $(CXXFILE) ./lib/commonLib.so ./funclib/dataQueue.cpp ./socket/connection.cpp  $(SERVER) \
 	$(CXX) $(SERVER_TARGET)
 
 initParser:

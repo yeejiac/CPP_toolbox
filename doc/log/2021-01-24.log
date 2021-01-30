@@ -663,3 +663,39 @@
 2021-01-24 19:18:53 | Debug | SR | (Server): free empty socket
 2021-01-24 19:18:53 | Debug | SR | (Server): lose connection
 2021-01-24 19:18:54 | Debug | SR | (Server): free empty socket
+2021-01-24 19:34:40 | Debug | CL | (Client) connect to 127.0.0.1 1202
+2021-01-24 19:34:40 | Warn | CL | (Client) Connection Failed
+2021-01-24 19:34:45 | Debug | CL | (Client) try connect
+2021-01-24 19:34:45 | Debug | CL | (Client) connect to 127.0.0.1 1202
+2021-01-24 19:34:45 | Warn | CL | (Client) Connection Failed
+2021-01-24 19:34:50 | Debug | CL | (Client) try connect
+2021-01-24 19:34:50 | Debug | CL | (Client) connect to 127.0.0.1 1202
+2021-01-24 19:34:50 | Warn | CL | (Client) Connection Failed
+2021-01-24 19:34:51 | Debug | SR | server socket init success
+2021-01-24 19:34:55 | Debug | CL | (Client) try connect
+2021-01-24 19:34:55 | Debug | CL | (Client) connect to 127.0.0.1 1202
+2021-01-24 19:34:55 | Debug | CL | (Client) connect success 
+2021-01-24 19:34:55 | Debug | SR | get socket connection: 0
+2021-01-24 19:34:55 | Debug | FD | (DataQueue) get data: HeartBeat
+2021-01-24 19:34:57 | Debug | FD | (DataQueue) get data: HeartBeat
+2021-01-24 19:34:59 | Debug | FD | (DataQueue) get data: HeartBeat
+2021-01-24 19:35:01 | Debug | FD | (DataQueue) get data: HeartBeat
+2021-01-24 19:35:03 | Debug | FD | (DataQueue) get data: HeartBeat
+2021-01-24 19:35:05 | Debug | FD | (DataQueue) get data: HeartBeat
+2021-01-24 19:35:07 | Debug | FD | (DataQueue) get data: HeartBeat
+2021-01-24 19:35:09 | Debug | FD | (DataQueue) get data: HeartBeat
+2021-01-24 19:35:11 | Debug | FD | (DataQueue) get data: HeartBeat
+2021-01-24 19:35:13 | Debug | FD | (DataQueue) get data: HeartBeat
+2021-01-24 19:35:15 | Error | CL | (Client) recv failed
+2021-01-24 19:35:15 | Debug | CL | (Client) connect to 127.0.0.1 1202
+2021-01-24 19:35:15 | Warn | CL | (Client) Connection Failed
+2021-01-24 20:16:42 | Debug | SR | server socket init success
+2021-01-24 20:17:15 | Debug | SR | server socket init success
+2021-01-24 20:17:25 | Debug | SR | server socket init success
+2021-01-24 20:18:07 | Debug | SR | server socket init success
+2021-01-24 20:18:20 | Debug | CL | (Client) connect to 127.0.0.1 1202
+2021-01-24 20:18:20 | Debug | SR | get socket connection: 0
+2021-01-24 20:18:20 | Debug | CL | (Client) connect success 
+2021-01-24 20:18:46 | Error | CL | (Client) recv failed
+2021-01-24 20:18:46 | Debug | CL | (Client) connect to 127.0.0.1 1202
+2021-01-24 20:18:46 | Warn | CL | (Client) Connection Failed

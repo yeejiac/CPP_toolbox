@@ -1,11 +1,14 @@
 #include "client.h"
 
-Client::Client(std::string configSelect):connStatus_(true),configSelect_(configSelect)
+Client::Client(std::string initFilePath, std::string initchosen, std::string logPath)
 {
+    logwrite = new Logwriter("CL", logPath);
+	ip = new InitParser(initFilePath, initchosen);
+    //connStatus_ = true;
     allowConn();
-    //std::thread sendtd(&Client::sendMsg,this);
+    std::thread sendtd(&Client::heartbeatSending,this);
     std::thread recvtd(&Client::recvMsg,this);
-    //sendtd.detach();
+    sendtd.detach();
     recvtd.join();
     std::this_thread::sleep_for(std::chrono::seconds(2));
 };
@@ -24,15 +27,14 @@ bool Client::getConnStatus()
 
 void Client::socketini()
 {
-    InitParser *ip = new InitParser("../doc/settings.ini", configSelect_);
     ip->readLine();
 	const char* addr = ip->iniContainer["addr"].c_str();
 	int port = std::stoi(ip->iniContainer["port"]);
-    logwrite.write(LogLevel::DEBUG, "(Client) connect to " + ip->iniContainer["addr"] + " " + ip->iniContainer["port"]);
+    logwrite->write(LogLevel::DEBUG, "(Client) connect to " + ip->iniContainer["addr"] + " " + ip->iniContainer["port"]);
 	
     if ((sockfd_ = socket(AF_INET, SOCK_STREAM, 0)) < 0) 
     { 
-        logwrite.write(LogLevel::WARN, "(Client) socket initialise failed");
+        logwrite->write(LogLevel::WARN, "(Client) socket initialise failed");
         return;
     }
 
@@ -43,14 +45,14 @@ void Client::socketini()
 
     if(inet_pton(AF_INET, "127.0.0.1", &serv_addr_.sin_addr)<=0)  
     { 
-        logwrite.write(LogLevel::WARN, "(Client) Invalid address/ Address not supported");
+        logwrite->write(LogLevel::WARN, "(Client) Invalid address/ Address not supported");
         setConnStatus(false);
         return; 
     }
 
     if (connect(sockfd_, (struct sockaddr *)&serv_addr_, sizeof(serv_addr_)) < 0) 
     { 
-        logwrite.write(LogLevel::WARN, "(Client) Connection Failed");
+        logwrite->write(LogLevel::WARN, "(Client) Connection Failed");
         setConnStatus(false);
         return;
     }
@@ -64,12 +66,12 @@ void Client::allowConn()
         socketini();
         if (getConnStatus()) 
         {
-            logwrite.write(LogLevel::DEBUG, "(Client) connect success ");
+            logwrite->write(LogLevel::DEBUG, "(Client) connect success ");
             cv_.notify_all();
             break;
         }
         std::this_thread::sleep_for(std::chrono::seconds(5));
-        logwrite.write(LogLevel::DEBUG, "(Client) try connect" );
+        logwrite->write(LogLevel::DEBUG, "(Client) try connect" );
     }
 }
 
@@ -81,7 +83,26 @@ void Client::sendMsg()
         sendSignal_ = send(sockfd_, str.c_str(), recvbuflen_, 0);
         if(sendSignal_<0)
         {
-            logwrite.write(LogLevel::ERROR, "(Client) send failed");
+            logwrite->write(LogLevel::ERROR, "(Client) send failed");
+            std::unique_lock<std::mutex> lck2(mutex_);
+            cv_.wait(lck2);
+        }
+        else
+        {
+            std::this_thread::sleep_for(std::chrono::seconds(2));
+        } 
+    }
+}
+
+void Client::heartbeatSending()
+{
+    while(true)
+    {
+        std::string str = "HeartBeat";
+        sendSignal_ = send(sockfd_, str.c_str(), recvbuflen_, 0);
+        if(sendSignal_<0)
+        {
+            logwrite->write(LogLevel::ERROR, "(Client) send failed");
             std::unique_lock<std::mutex> lck2(mutex_);
             cv_.wait(lck2);
         }
@@ -104,7 +125,7 @@ void Client::recvMsg()
         }
         else
         {
-            logwrite.write(LogLevel::ERROR, "(Client) recv failed");
+            logwrite->write(LogLevel::ERROR, "(Client) recv failed");
             close(sockfd_);
             setConnStatus(false);
             std::thread reconn(&Client::allowConn,this);
@@ -115,10 +136,10 @@ void Client::recvMsg()
     }
 }
 
-int main()
-{
-    Client *cl = new Client("socket");
-}
+// int main()
+// {
+//     Client *cl = new Client("socket");
+// }
 
 
 

@@ -23,16 +23,18 @@
 class Client
 {
 public:
-    Client(std::string configSelect);
+    Client(std::string initFilePath, std::string initchosen, std::string logPath);
     void socketini();
     void allowConn();
     void setConnStatus(bool stat);
     bool getConnStatus();
     void sendMsg();
+    void heartbeatSending();
     void recvMsg();
     void reConnect();
-    Logwriter logwrite = Logwriter("CL", "../doc/log/");
-	DataQueue *dq = new DataQueue(10);
+    Logwriter *logwrite;
+    InitParser *ip;
+	DataQueue *dq;
 	
 private:
     std::string configSelect_;
