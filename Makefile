@@ -23,8 +23,8 @@ OBJS=$(LIBS:.cpp=.o )
 OFILE=$(wildcard $(LIBPATH)*.o)
 
 main: $(CXXFILE)
-	g++ $(DEBUG) $(CXXFILE) ./lib/commonLib.so ./funclib/dataQueue.cpp ./socket/connection.cpp  $(SERVER) \
-	$(CXX) $(SERVER_TARGET)
+	g++ $(DEBUG) $(CXXFILE) ./lib/commonLib.so ./funclib/dataQueue.cpp ./socket/connection.cpp  $(CLIENT) \
+	$(CXX) $(CLIENT_TARGET)
 
 initParser:
 	g++ -std=c++11 -fPIC -c $(FILEPATH)initParser.cpp -o $(BIN)initParser.o

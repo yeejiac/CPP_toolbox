@@ -29,6 +29,7 @@ public:
     void setConnStatus(bool stat);
     bool getConnStatus();
     void sendMsg();
+    void sendTypeMsg();
     void heartbeatSending();
     void recvMsg();
     void reConnect();

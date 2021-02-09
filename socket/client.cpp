@@ -6,7 +6,7 @@ Client::Client(std::string initFilePath, std::string initchosen, std::string log
 	ip = new InitParser(initFilePath, initchosen);
     //connStatus_ = true;
     allowConn();
-    std::thread sendtd(&Client::heartbeatSending,this);
+    std::thread sendtd(&Client::sendTypeMsg,this);
     std::thread recvtd(&Client::recvMsg,this);
     sendtd.detach();
     recvtd.join();
@@ -80,6 +80,26 @@ void Client::sendMsg()
     while(true)
     {
         std::string str = "Testing Msg";
+        sendSignal_ = send(sockfd_, str.c_str(), recvbuflen_, 0);
+        if(sendSignal_<0)
+        {
+            logwrite->write(LogLevel::ERROR, "(Client) send failed");
+            std::unique_lock<std::mutex> lck2(mutex_);
+            cv_.wait(lck2);
+        }
+        else
+        {
+            std::this_thread::sleep_for(std::chrono::seconds(2));
+        } 
+    }
+}
+
+void Client::sendTypeMsg()
+{
+    while(true)
+    {
+        std::string str;
+        std::cin>>str;
         sendSignal_ = send(sockfd_, str.c_str(), recvbuflen_, 0);
         if(sendSignal_<0)
         {
